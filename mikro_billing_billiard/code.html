@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mikro Billing Billiard - Smart Management System</title>
+    <meta name="description"
+        content="Mikro Billing adalah software kasir dan sistem manajemen terintegrasi IoT khusus untuk usaha Billiard & Cafe. Hindari kebocoran pendapatan dengan fitur durasi otomatis dan booking meja." />
+    <meta name="keywords"
+        content="billing billiard, software kasir billiard, aplikasi manajemen billiard, IoT billiard, sistem kasir cafe, mikro billing, lampu billiard otomatis" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="PT Appsku Aplikasi Indonesia" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mikrobilling.com/" />
+    <meta property="og:title" content="Mikro Billing Billiard - Smart Management System" />
+    <meta property="og:description"
+        content="Sistem kasir dan manajemen terintegrasi IoT khusus untuk usaha Billiard. Hindari kebocoran dan pantau pendapatan darimana saja." />
+    <meta property="og:image" content="https://mikrobilling.com/assets/og-image.jpg" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mikrobilling.com/" />
+    <meta property="twitter:title" content="Mikro Billing Billiard - Smart Management System" />
+    <meta property="twitter:description"
+        content="Sistem kasir dan manajemen terintegrasi IoT khusus untuk usaha Billiard. Hindari kebocoran dan pantau pendapatan darimana saja." />
+    <meta property="twitter:image" content="https://mikrobilling.com/assets/og-image.jpg" />
+    <link rel="canonical" href="https://mikrobilling.com/" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#50C878", // Emerald Green
+                        "primary-hover": "#3ea361",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a", // Midnight Black
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b", // Deep Charcoal
+                        "text-light": "#1e293b",
+                        "text-dark": "#e2e8f0",
+                        "subtext-light": "#64748b",
+                        "subtext-dark": "#94a3b8",
+                    },
+                    fontFamily: {
+                        display: ["'Plus Jakarta Sans'", "sans-serif"],
+                        body: ["'Plus Jakarta Sans'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "3xl": "2rem",
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1)), url('https://images.unsplash.com/photo-1596464522964-b912c984ee8f?q=80&w=2070&auto=format&fit=crop')",
+                        'hero-pattern-light': "linear-gradient(to bottom, rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 1)), url('https://images.unsplash.com/photo-1596464522964-b912c984ee8f?q=80&w=2070&auto=format&fit=crop')"
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-300">
+    <nav
+        class="fixed w-full z-50 top-0 left-0 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <span class="material-icons-round text-primary text-3xl">sports_esports</span>
+                    <span class="font-bold text-xl tracking-tight text-text-light dark:text-white">Mikro<span
+                            class="text-primary">Billing</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="#home">Beranda</a>
+                    <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="#features">Fitur</a>
+                    <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="#modules">Modul</a>
+                    <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="tentang_kami.html">Tentang Kami</a>
+                    <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="#clients">Klien</a>
+                    <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="#gallery">Galeri</a>
+                    <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+                        href="#pricing">Harga</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-subtext-light dark:text-subtext-dark"
+                        onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-icons-round">dark_mode</span>
+                    </button>
+                    <a class="hidden md:inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-semibold rounded-full text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all duration-300"
+                        href="daftar_sekarang.html">
+                        Daftar Sekarang
+                    </a>
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button"
+                        class="md:hidden p-2 rounded-md text-subtext-light dark:text-subtext-dark hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition-colors"
+                        onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <span class="material-icons-round">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 absolute w-full left-0 top-20 shadow-xl transition-all duration-300 pb-4">
+            <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
+                <a href="#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.getElementById('mobile-menu').classList.add('hidden')">Beranda</a>
+                <a href="#features"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.getElementById('mobile-menu').classList.add('hidden')">Fitur</a>
+                <a href="#modules"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.getElementById('mobile-menu').classList.add('hidden')">Modul</a>
+                <a href="tentang_kami.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang Kami</a>
+                <a href="#clients"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.getElementById('mobile-menu').classList.add('hidden')">Klien</a>
+                <a href="#gallery"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.getElementById('mobile-menu').classList.add('hidden')">Galeri</a>
+                <a href="#pricing"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.getElementById('mobile-menu').classList.add('hidden')">Harga</a>
+                <div class="pt-4 pb-2 mt-2">
+                    <a href="daftar_sekarang.html"
+                        class="flex w-full items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all duration-300">
+                        Daftar Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section
+        class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-hero-pattern-light dark:bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Solusi Manajemen Billiard #1
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-text-light dark:text-white">
+                        Kelola Bisnis Billiard <br class="hidden lg:block" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">Lebih
+                            Efisien</span> &amp; Cerdas
+                    </h1>
+                    <p
+                        class="text-lg md:text-xl text-subtext-light dark:text-subtext-dark mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Sistem kasir dan manajemen terintegrasi IoT khusus untuk usaha Billiard &amp; Cafe. Hindari
+                        kebocoran pendapatan dan pantau bisnis dari mana saja.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-primary hover:bg-primary-hover shadow-xl shadow-primary/30 transform hover:-translate-y-1 transition-all duration-300"
+                            href="https://api.whatsapp.com/send?phone=6285369237896&text=Halo%20Admin%20Mikro%20Billing%2C%20saya%20ingin%20meminta%20demo%20gratis%20untuk%20sistem%20ini.">
+                            Minta Demo Gratis
+                            <span class="material-icons-round ml-2">arrow_forward</span>
+                        </a>
+                        <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-text-light dark:text-white bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 hover:border-primary dark:hover:border-primary shadow-lg transition-all duration-300 group"
+                            href="#demo-video">
+                            <span
+                                class="material-icons-round mr-2 text-primary group-hover:scale-110 transition-transform">play_circle</span>
+                            Lihat Video Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="relative animate-float">
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-surface-light dark:border-surface-dark bg-white">
+                        <img alt="Billiard Management Dashboard"
+                            class="w-full h-auto object-cover transform scale-105 hover:scale-100 transition-transform duration-700"
+                            src="./image/laptop-image.jpg?v=2" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute bottom-6 left-6 right-6 p-4 bg-surface-dark/90 backdrop-blur-md rounded-xl border border-gray-700 shadow-lg hidden sm:flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="p-2 bg-primary/20 rounded-lg">
+                                    <span class="material-icons-round text-primary">verified_user</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Akurasi Sistem</p>
+                                    <p class="text-white font-bold">99.9%</p>
+                                </div>
+                            </div>
+                            <div class="h-8 w-px bg-gray-700"></div>
+                            <div class="flex items-center gap-3">
+                                <div class="p-2 bg-blue-500/20 rounded-lg">
+                                    <span class="material-icons-round text-blue-400">cloud_sync</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400">Sistem POS</p>
+                                    <p class="text-white font-bold">Realtime Cloud</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-10 -right-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl -z-10"></div>
+                    <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl -z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-surface-light dark:bg-surface-dark" id="features">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Fitur Unggulan</span>
+                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-text-light dark:text-white">Solusi Lengkap
+                    Manajemen</h2>
+                <p class="mt-4 text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">Kami mengerti kebutuhan
+                    bisnis billiard Anda. Fitur kami dirancang untuk efisiensi, keamanan, dan kemudahan.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-[#151e2e] border border-gray-100 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <span
+                            class="material-icons-round text-3xl text-primary group-hover:text-white transition-colors duration-300">timer</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-light dark:text-white mb-3">Durasi Otomatis</h3>
+                    <p class="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
+                        Sistem menghitung biaya secara akurat berdasarkan durasi lampu meja menyala. Mencegah human
+                        error &amp; kecurangan.
+                    </p>
+                </div>
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-[#151e2e] border border-gray-100 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <span
+                            class="material-icons-round text-3xl text-primary group-hover:text-white transition-colors duration-300">hub</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-light dark:text-white mb-3">Integrasi IoT</h3>
+                    <p class="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
+                        Lampu meja billiard terhubung langsung dengan sistem kasir. Lampu mati otomatis saat billing
+                        berhenti.
+                    </p>
+                </div>
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-[#151e2e] border border-gray-100 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <span
+                            class="material-icons-round text-3xl text-primary group-hover:text-white transition-colors duration-300">calendar_month</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-light dark:text-white mb-3">Booking System</h3>
+                    <p class="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
+                        Pelanggan bisa booking meja sebelum datang. Memastikan ketersediaan meja tanpa antri lama di
+                        lokasi.
+                    </p>
+                </div>
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-[#151e2e] border border-gray-100 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <span
+                            class="material-icons-round text-3xl text-primary group-hover:text-white transition-colors duration-300">inventory_2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-light dark:text-white mb-3">Manajemen Inventori</h3>
+                    <p class="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
+                        Pantau stok makanan dan minuman cafe secara real-time. Dapatkan notifikasi saat stok menipis.
+                    </p>
+                </div>
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-[#151e2e] border border-gray-100 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <span
+                            class="material-icons-round text-3xl text-primary group-hover:text-white transition-colors duration-300">storefront</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-light dark:text-white mb-3">Multi Cabang</h3>
+                    <p class="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
+                        Kelola banyak cabang billiard dari satu dashboard pusat. Laporan terpusat memudahkan analisis
+                        bisnis.
+                    </p>
+                </div>
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-[#151e2e] border border-gray-100 dark:border-gray-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                        <span
+                            class="material-icons-round text-3xl text-primary group-hover:text-white transition-colors duration-300">receipt_long</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-light dark:text-white mb-3">Laporan Keuangan</h3>
+                    <p class="text-subtext-light dark:text-subtext-dark text-sm leading-relaxed">
+                        Laporan omzet, laba rugi, dan performa karyawan yang detail dan bisa diakses kapan saja.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Screenshot Aplikasi (Moved to top) -->
+    <section class="pt-24 pb-8 bg-background-light dark:bg-background-dark relative" id="screenshots">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-text-light dark:text-white mb-6">Tampilan Aplikasi
+                    Mikro Billing</h2>
+                <p class="text-lg text-subtext-light dark:text-gray-400 max-w-2xl mx-auto">
+                    Dashboard kasir memudahkan pengelolaan meja, transaksi, paket member, dan laporan bisnis dalam satu
+                    tampilan yang bersih dan intuitif.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Glass Card 1: Dashboard Utama -->
+                <div
+                    class="group relative rounded-3xl p-1 bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-800 dark:to-gray-900 border border-white/20 dark:border-gray-700/50 shadow-xl overflow-hidden backdrop-blur-sm transition-transform duration-500 hover:-translate-y-2">
+                    <div class="h-full bg-white dark:bg-[#151e2e]/90 rounded-[1.3rem] overflow-hidden flex flex-col">
+                        <div class="aspect-[16/9] bg-gray-200 dark:bg-gray-800 relative">
+                            <img src="./image/dashboard-utama.jpg" alt="1. Dashboard Utama"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                                onerror="this.src='https://placehold.co/800x450/1e293b/ffffff?text=1.+Dashboard+Utama'" />
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-bold text-text-light dark:text-white text-lg mb-2">1. Dashboard Utama</h3>
+                            <p class="text-sm text-subtext-light dark:text-gray-400">Pantau status seluruh meja secara
+                                real-time. Dilengkapi informasi durasi, total tagihan billing & restoran, serta navigasi
+                                menu terpusat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glass Card 2: Sistem Kasir (POS) -->
+                <div
+                    class="group relative rounded-3xl p-1 bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-800 dark:to-gray-900 border border-white/20 dark:border-gray-700/50 shadow-xl overflow-hidden backdrop-blur-sm transition-transform duration-500 hover:-translate-y-2">
+                    <div class="h-full bg-white dark:bg-[#151e2e]/90 rounded-[1.3rem] overflow-hidden flex flex-col">
+                        <div class="aspect-[16/9] bg-gray-200 dark:bg-gray-800 relative">
+                            <img src="./image/pos.jpg" alt="2. Sistem Kasir (POS)"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                                onerror="this.src='https://placehold.co/800x450/1e293b/ffffff?text=2.+Sistem+Kasir+(POS)'" />
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-bold text-text-light dark:text-white text-lg mb-2">2. Sistem Kasir (POS)
+                            </h3>
+                            <p class="text-sm text-subtext-light dark:text-gray-400">Proses transaksi pemesanan makanan,
+                                minuman, dan tagihan meja dengan mudah. Desain layout grid memudahkan kasir dalam input
+                                pesanan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glass Card 3: Manajemen Meja (Table Data) -->
+                <div
+                    class="group relative rounded-3xl p-1 bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-800 dark:to-gray-900 border border-white/20 dark:border-gray-700/50 shadow-xl overflow-hidden backdrop-blur-sm transition-transform duration-500 hover:-translate-y-2">
+                    <div class="h-full bg-white dark:bg-[#151e2e]/90 rounded-[1.3rem] overflow-hidden flex flex-col">
+                        <div class="aspect-[16/9] bg-gray-200 dark:bg-gray-800 relative">
+                            <img src="./image/meja.jpg" alt="3. Manajemen Data Meja"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                                onerror="this.src='https://placehold.co/800x450/1e293b/ffffff?text=3.+Data+Meja'" />
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-bold text-text-light dark:text-white text-lg mb-2">3. Manajemen Data Meja
+                            </h3>
+                            <p class="text-sm text-subtext-light dark:text-gray-400">Pusat kontrol untuk mendata seluruh
+                                meja billiard. Menambah, mengubah nama, hingga menghapus aset meja secara dinamis dari
+                                sistem.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glass Card 4: Master Data Produk -->
+                <div
+                    class="group relative rounded-3xl p-1 bg-gradient-to-br from-gray-200 to-gray-100 dark:from-gray-800 dark:to-gray-900 border border-white/20 dark:border-gray-700/50 shadow-xl overflow-hidden backdrop-blur-sm transition-transform duration-500 hover:-translate-y-2">
+                    <div class="h-full bg-white dark:bg-[#151e2e]/90 rounded-[1.3rem] overflow-hidden flex flex-col">
+                        <div class="aspect-[16/9] bg-gray-200 dark:bg-gray-800 relative">
+                            <img src="./image/produk.jpg" alt="4. Master Data Produk"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                                onerror="this.src='https://placehold.co/800x450/1e293b/ffffff?text=4.+Data+Produk'" />
+                        </div>
+                        <div class="p-6 flex-1">
+                            <h3 class="font-bold text-text-light dark:text-white text-lg mb-2">4. Master Data Produk
+                            </h3>
+                            <p class="text-sm text-subtext-light dark:text-gray-400">Inventaris katalog menu cafe secara
+                                lengkap. Konfigurasi harga modal, harga jual, serta kategori (makanan/minuman) dengan
+                                rapi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 1: Video Demo Sistem (Moved below Screenshots) -->
+    <section class="pt-8 pb-24 bg-surface-light dark:bg-[#0b1120] relative overflow-hidden" id="demo-video">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent to-surface-light dark:to-surface-dark pointer-events-none">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+                <span class="material-icons-round text-sm">play_arrow</span>
+                Live Demo
+            </div>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-text-light dark:text-white mb-6 tracking-tight">Lihat
+                Sistem Bekerja</h2>
+            <p class="text-lg text-subtext-light dark:text-gray-400 max-w-3xl mx-auto mb-16 leading-relaxed">
+                Sistem Mikro Billing dapat mengontrol meja billiard secara otomatis mulai dari menyalakan lampu meja,
+                menghitung waktu bermain, hingga menghasilkan laporan transaksi secara real-time.
+            </p>
+
+            <div
+                class="relative w-full max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 bg-black group mb-12">
+                <iframe
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen="" class="w-full h-full" frameborder="0"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    src="https://www.youtube.com/embed/7bIEYGeOG4c?si=1r-Gqdnm7pWVz9kr"
+                    title="YouTube video player"></iframe>
+                <div
+                    class="absolute inset-0 pointer-events-none rounded-3xl ring-1 ring-inset ring-black/10 dark:ring-white/10">
+                </div>
+                <!-- Decorative Glow -->
+                <div
+                    class="absolute -inset-0.5 bg-gradient-to-r from-primary to-emerald-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500 -z-10">
+                </div>
+            </div>
+
+            <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transform hover:-translate-y-1 transition-all duration-300"
+                href="https://youtu.be/7bIEYGeOG4c?si=1r-Gqdnm7pWVz9kr" target="_blank" rel="noopener noreferrer">
+                Tonton Demo Lengkap
+                <span class="material-icons-round ml-2">open_in_new</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 3: Hardware Panel -->
+    <section
+        class="py-24 bg-surface-light dark:bg-[#0f172a] border-t border-gray-200 dark:border-gray-800 relative overflow-hidden"
+        id="hardware">
+        <!-- Ambient glowing spheres -->
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Left: Hardware Image/Graphic (Stacked Composition) -->
+                <div class="order-2 lg:order-1 relative group p-4 xl:p-8 mt-12 mb-12 lg:mb-8 lg:mt-0">
+                    <!-- Base Solid Background Glow -->
+                    <div
+                        class="absolute inset-0 top-12 left-12 bg-gradient-to-tr from-primary/10 to-emerald-400/5 rounded-[3rem] blur-2xl -z-10">
+                    </div>
+
+                    <!-- Main Image (Interior Controller) -->
+                    <div
+                        class="relative bg-gradient-to-br from-gray-100 to-white dark:from-gray-800 dark:to-[#1e293b] ring-1 ring-gray-200 dark:ring-gray-700/50 rounded-3xl p-3 shadow-2xl z-10 w-[75%] lg:w-[80%] transform group-hover:-translate-y-2 transition-transform duration-500 origin-top-left mx-auto lg:mx-0">
+                        <img src="./image/controller.jpg" alt="Bagian Dalam Smart Controller"
+                            class="w-full h-auto rounded-2xl aspect-[4/5] object-top border border-gray-100 dark:border-gray-800 object-cover origin-center hover:scale-105 transition-transform duration-700" />
+                    </div>
+
+                    <!-- Superimposed Overlaid Image (Exterior Box) -->
+                    <div
+                        class="absolute -bottom-16 -right-4 sm:-bottom-20 sm:right-4 lg:-bottom-16 lg:-right-4 xl:-bottom-20 xl:-right-8 w-[50%] sm:w-[45%] lg:w-[45%] z-20 bg-gradient-to-br from-gray-100 to-white dark:from-gray-800 dark:to-[#1e293b] rounded-3xl p-3 shadow-2xl ring-4 ring-background-light dark:ring-[#0f172a] transform group-hover:-translate-y-4 group-hover:-translate-x-4 transition-transform duration-500">
+                        <img src="./image/box-controller.jpg" alt="Bagian Luar Box Controller"
+                            class="w-full h-auto rounded-2xl aspect-[4/5] border border-gray-100 dark:border-gray-800 object-cover origin-center hover:scale-105 transition-transform duration-700" />
+                    </div>
+                </div>
+
+                <!-- Right: Text Content -->
+                <div class="order-1 lg:order-2">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
+                        <span class="material-icons-round text-sm">settings_remote</span>
+                        Hardware Integration
+                    </div>
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-light dark:text-white mb-6 leading-tight">
+                        Perangkat Smart <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">Billing
+                            Controller</span>
+                    </h2>
+                    <p class="text-lg text-subtext-light dark:text-gray-400 mb-8 leading-relaxed">
+                        Panel Smart Power Controller terhubung secara fisik ke setiap meja billiard. Ekosistem ini
+                        dirancang untuk menghidupkan dan mematikan lampu meja secara otomatis langsung dari aplikasi
+                        kasir.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-surface-light dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 text-primary">
+                                    <span class="material-icons-round">rule</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-text-light dark:text-white">Operasional Akurat</h3>
+                                <p class="mt-1 text-subtext-light dark:text-gray-400 text-sm leading-relaxed">Waktu
+                                    billing dan lampu tersinkronisasi sempurna, tidak ada celah untuk manipulasi manual.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div
+                                    class="flex items-center justify-center w-12 h-12 rounded-xl bg-surface-light dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 text-primary">
+                                    <span class="material-icons-round">verified</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-text-light dark:text-white">Minim Kesalahan</h3>
+                                <p class="mt-1 text-subtext-light dark:text-gray-400 text-sm leading-relaxed">
+                                    Otomatisasi memangkas potensi human error, menjadikan pembukuan Anda rapi dan
+                                    terpercaya.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Galeri Perangkat & Sistem (Restored) -->
+    <section class="py-20 bg-surface-light dark:bg-surface-dark" id="gallery">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Hardware &amp; Environment</span>
+                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-text-light dark:text-white">Galeri Perangkat
+                    &amp; Sistem</h2>
+                <p class="mt-4 text-subtext-light dark:text-subtext-dark max-w-2xl mx-auto">
+                    Integrasi hardware IoT berkualitas tinggi dengan antarmuka software yang modern dan user-friendly.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                    <div class="aspect-[4/3] w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+                        <img alt="IoT Controller"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe1eK9nsFD6X0nYf02rrxWwOSmc9MH11121MMuvYwwK72ARjmV2HdCLIVROumF5iSM-EL3sn9qa4cX4ufATWcvG5qvfQ6knWMaYOvVH_1zW-v-uyt57a34DbtSo3hG6Nc-wSiDce9Vk-DfW6iXYZzIW9r2SmS0m0U9sUEB35ThlXfm2mPsCA8-TiiH4XJwRS5JoQ-mxyCpkYQeZy1N3tRN0yqvDu6VhsSGk4Z2TDIGLbGvfM4u-c_4TidoTWI1J2LUGL31KKM2L_AL" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-text-light dark:text-white">Smart IoT Controller</h3>
+                            <span class="material-icons-round text-primary">settings_remote</span>
+                        </div>
+                        <p class="text-sm text-subtext-light dark:text-subtext-dark">Kontrol lampu meja billiard
+                            otomatis yang terintegrasi langsung dengan billing.</p>
+                    </div>
+                </div>
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                    <div class="aspect-[4/3] w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+                        <img alt="Thermal Printer"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFC7eeu1H3fbFDOyQxxCqSKAgm2sUT0pFOdSt_MEy1zwvR9rM6SGvB1XY6a4Toa5RvX-S53vSTwO6l0mAzX56hGH3U1q7lrv6MupujIAVau3O7BnQ4L5HB3CwxwvHsh7otShHJLmGSah3y32qZjRH3ILMNFPz6Ms3hzKCvwkeAqEcab8OtqjRKNVKNsU5bH-YhJ0uB6IiYwEs2aUSfXZevz2EBtYbKkkyV_bnWgZJ-BvgE2_e57X-M4w2Qmtz9_B2Zc2lmNfRY7B4r" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-text-light dark:text-white">Thermal Printer</h3>
+                            <span class="material-icons-round text-primary">print</span>
+                        </div>
+                        <p class="text-sm text-subtext-light dark:text-subtext-dark">Cetak struk pembayaran dan order
+                            dapur dengan cepat dan jelas.</p>
+                    </div>
+                </div>
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                    <div class="aspect-[4/3] w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+                        <img alt="Dashboard View"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDq0kSIJqsdFPt_1blruvjaDsxSDU2ItNeK7yK-YhM6jDBk5Lc2kzToknaMVsA7b50PogQ3-RVttmXO05jmmaBSoahjgUMDth9pRauC8zFnsAI5Uv6uwnnNFdnFti9K5kZYIVHoAaodBEk3ZSHLK31S2oX6iIJohJOzfZzUAgcBCJYPa4JZy16H4YZ78_EtZ97LV5dg3I_e86Trb3J3bTGDF_A4ijO9gTFJoe_Rn8hpzf1_kx3K2OQtOh4cfN1v1IIuXRKWbQQWNyD" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-text-light dark:text-white">Realtime Analytics</h3>
+                            <span class="material-icons-round text-primary">insights</span>
+                        </div>
+                        <p class="text-sm text-subtext-light dark:text-subtext-dark">Pantau performa bisnis dan
+                            pendapatan secara real-time dari dashboard.</p>
+                    </div>
+                </div>
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                    <div class="aspect-[4/3] w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+                        <img alt="Mobile POS"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjrhKS0EyiKWeYNyP6_zqqaBb2m3cm_Ma9CBHSHZsVa_tUYiSZfquGPlZhV2RgIY4tqmLGubBqSljbZlzIoufceWiJt_XiAlpCJb5VmOKyOkzVXlTHZGozS2L8ZXJL_E92SCp_w_ZQ-9khvXRiM9Zs1rJ6lNran_XTmx15gaCP6i45lTH7kpyE47SxcZEVj3v4Zt2qoLW1QY9A7C82K-4Uc4-TrtfKlNGoYJIQpf7ZH95MdcIHiQBKIwgrC0XUmbofUyBNCzWNkLcT" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-text-light dark:text-white">Mobile Order</h3>
+                            <span class="material-icons-round text-primary">smartphone</span>
+                        </div>
+                        <p class="text-sm text-subtext-light dark:text-subtext-dark">Memudahkan waiter mencatat pesanan
+                            langsung dari meja pelanggan.</p>
+                    </div>
+                </div>
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                    <div class="aspect-[4/3] w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+                        <img alt="Customer Display"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAih2KdVuHuLjzWIue7XYMqaBIZXLJkIL0LjMb1Gv80F7s2gU6c0hRJC4uIUmVbOY6LhsEQEKQlBiQSEigv49znEX7A3fXbSTWLd6ckyhayacHEssQHYJD1BszWsdd1vEsvEhEOsdJF4pgzgoGTnFJ5jNwrXLUMT2S67x7NiXz2VkH9myKjWoWJCu2JUIYAozZnD_HyAgZuuPduKxm5nMn16x-WHgfKdFjf2Gt1J2GsDuT8h_K7pGp97M-odcLbLKcwH9wX0hsXLvYP" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-text-light dark:text-white">Customer Display</h3>
+                            <span class="material-icons-round text-primary">monitor</span>
+                        </div>
+                        <p class="text-sm text-subtext-light dark:text-subtext-dark">Tampilan harga yang transparan
+                            untuk pelanggan saat pembayaran.</p>
+                    </div>
+                </div>
+                <div
+                    class="group relative overflow-hidden rounded-2xl bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                    <div class="aspect-[4/3] w-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+                        <img alt="Environment"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuChGlR4mGt4GixYs5eMo5tMdIMB17YYeiO9gIE5w2JbB6UVAC8xkCSqg5DJYPNhfGvu3DRBy_u3wJCYmn0MCDVJyWHZdfymBKHY_-RFeK6eVUL4FGr_y1omJ21pLnIvX7EIqUCCefOFqPF9hxB2IB6Ml0NchlxNWoVhCPXWm5ZIB7DtOWgb3MJnb3UppdpYSXIcLjP4tGwFnBHrRp6IZh4wxy4tRbmCgTtj_QRn_FT3XWoUR7kaMKOgzYzggKy_NMxcmlZtxA0D_KGX" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-bold text-text-light dark:text-white">Modern Ambience</h3>
+                            <span class="material-icons-round text-primary">store</span>
+                        </div>
+                        <p class="text-sm text-subtext-light dark:text-subtext-dark">Sistem yang mendukung operasional
+                            billiard modern dan profesional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients"
+        class="py-12 bg-background-light dark:bg-background-dark border-y border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p
+                class="text-center text-sm font-semibold text-subtext-light dark:text-subtext-dark uppercase tracking-widest mb-8">
+                Klien Kami</p>
+            <div class="relative w-full">
+                <div
+                    class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    <div class="flex flex-col items-center gap-3">
+                        <div
+                            class="w-32 h-32 md:w-40 md:h-40 bg-white rounded-2xl p-2 shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden">
+                            <img src="./dragon-ball.jpg" alt="Dragon Ball Billiard"
+                                class="w-full h-full object-contain mix-blend-multiply" />
+                        </div>
+                        <span class="text-lg font-bold font-display text-text-light dark:text-white">Dragon Ball
+                            Billiard</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div
+                            class="w-32 h-32 md:w-40 md:h-40 bg-white rounded-2xl p-2 shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden">
+                            <img src="./f-one.jpg" alt="F-One Billiard"
+                                class="w-full h-full object-contain mix-blend-multiply" />
+                        </div>
+                        <span class="text-lg font-bold font-display text-text-light dark:text-white">F-One
+                            Billiard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-background-dark" id="modules">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-text-light dark:text-white">Modul Terlengkap</h2>
+                <p class="mt-4 text-subtext-light dark:text-subtext-dark">Satu ekosistem untuk semua kebutuhan
+                    operasional Anda.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">dashboard</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">Dashboard</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Analisa real-time</p>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">sports_score</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">Billiard Module</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Kontrol IoT Lampu</p>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">lock</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">Locker</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Sewa penyimpanan</p>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">card_membership</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">Membership</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Kelola member &amp; poin</p>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">restaurant_menu</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">F&amp;B Order</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Pesanan ke dapur</p>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">print</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">Remote Print</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Cetak ke bar/dapur</p>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">account_balance_wallet</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">Accounting</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Laporan keuangan</p>
+                </div>
+                <div
+                    class="flex flex-col items-center text-center p-6 bg-surface-light dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors">
+                    <div class="text-primary mb-3">
+                        <span class="material-icons-round text-4xl">qr_code_scanner</span>
+                    </div>
+                    <h4 class="font-bold text-text-light dark:text-white mb-1">QR Order</h4>
+                    <p class="text-xs text-subtext-light dark:text-subtext-dark">Pesan dari meja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-surface-light dark:bg-surface-dark relative overflow-hidden" id="pricing">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background-dark/5 to-transparent">
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Investasi Terbaik</span>
+                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-text-light dark:text-white">Paket Profesional
+                </h2>
+                <p class="mt-4 text-subtext-light dark:text-subtext-dark max-w-xl mx-auto">
+                    Pilih paket yang sesuai dengan skala bisnis Anda. Tingkatkan efisiensi dan keuntungan.
+                </p>
+                <div class="mt-8 flex justify-center">
+                    <div class="bg-gray-100 dark:bg-gray-800 p-1 rounded-full flex items-center">
+                        <button
+                            class="px-6 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-md">Bulanan</button>
+                        <button
+                            class="px-6 py-2 rounded-full text-subtext-light dark:text-gray-400 text-sm font-semibold hover:text-primary transition-colors">Tahunan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div
+                    class="pricing-card bg-white dark:bg-[#151e2e] rounded-3xl p-8 border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col relative">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-text-light dark:text-white uppercase tracking-wider">Premium
+                        </h3>
+                        <div class="mt-4 flex items-baseline">
+                            <span class="text-sm font-semibold text-subtext-light dark:text-subtext-dark">Rp</span>
+                            <span class="text-4xl font-extrabold text-text-light dark:text-white">200.000</span>
+                            <span class="text-sm font-medium text-subtext-light dark:text-subtext-dark">/bulan</span>
+                        </div>
+                        <p class="mt-2 text-xs text-subtext-light dark:text-subtext-dark">Cocok untuk usaha rintisan.
+                        </p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Billing Billiard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Integrasi IoT (Lampu)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Manajemen Transaksi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Absensi Staff</span>
+                        </li>
+                        <li class="flex items-start opacity-50">
+                            <span class="material-icons-round text-gray-400 text-lg mr-2">cancel</span>
+                            <span class="text-sm text-gray-400">Inventory Management</span>
+                        </li>
+                        <li class="flex items-start opacity-50">
+                            <span class="material-icons-round text-gray-400 text-lg mr-2">cancel</span>
+                            <span class="text-sm text-gray-400">Accounting System</span>
+                        </li>
+                    </ul>
+                    <a class="w-full block text-center py-3 rounded-xl border-2 border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300"
+                        href="#">
+                        Pilih Paket
+                    </a>
+                </div>
+                <div
+                    class="pricing-card bg-[#1a2639] dark:bg-[#1a2639] rounded-3xl p-8 border-2 border-primary shadow-2xl shadow-primary/20 flex flex-col relative transform scale-105 z-10">
+                    <div
+                        class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-2xl">
+                        POPULER</div>
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wider">Premium Plus</h3>
+                        <div class="mt-4 flex items-baseline">
+                            <span class="text-sm font-semibold text-gray-400">Rp</span>
+                            <span class="text-4xl font-extrabold text-white">300.000</span>
+                            <span class="text-sm font-medium text-gray-400">/bulan</span>
+                        </div>
+                        <p class="mt-2 text-xs text-gray-400">Fitur lengkap untuk bisnis berkembang.</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-gray-200">Semua fitur Premium</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-gray-200">Inventory F&amp;B</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-gray-200">Remote Printer (Dapur/Bar)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-gray-200">Locker Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-gray-200">Table Management</span>
+                        </li>
+                        <li class="flex items-start opacity-50">
+                            <span class="material-icons-round text-gray-500 text-lg mr-2">cancel</span>
+                            <span class="text-sm text-gray-500">Accounting System</span>
+                        </li>
+                    </ul>
+                    <a class="w-full block text-center py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary-hover shadow-lg shadow-primary/40 transition-all duration-300"
+                        href="#">
+                        Daftar Sekarang
+                    </a>
+                </div>
+                <div
+                    class="pricing-card bg-white dark:bg-[#151e2e] rounded-3xl p-8 border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col relative">
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold text-text-light dark:text-white uppercase tracking-wider">Special
+                            Edition</h3>
+                        <div class="mt-4 flex items-baseline">
+                            <span class="text-sm font-semibold text-subtext-light dark:text-subtext-dark">Rp</span>
+                            <span class="text-4xl font-extrabold text-text-light dark:text-white">400.000</span>
+                            <span class="text-sm font-medium text-subtext-light dark:text-subtext-dark">/bulan</span>
+                        </div>
+                        <p class="mt-2 text-xs text-subtext-light dark:text-subtext-dark">Solusi enterprise tanpa batas.
+                        </p>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Semua fitur Premium Plus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Full Accounting System</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Laporan Laba Rugi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Multi Cabang Dashboard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="material-icons-round text-primary text-lg mr-2">check_circle</span>
+                            <span class="text-sm text-subtext-light dark:text-gray-300">Prioritas Support 24/7</span>
+                        </li>
+                    </ul>
+                    <a class="w-full block text-center py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 text-text-light dark:text-white font-bold hover:border-primary hover:text-primary transition-all duration-300"
+                        href="#">
+                        Hubungi Sales
+                    </a>
+                </div>
+            </div>
+            <p class="text-center text-xs text-subtext-light dark:text-gray-500 mt-8 italic">*Semua paket di atas
+                mendapatkan Lisensi untuk 2 Perangkat dan 5 Pengguna</p>
+        </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-background-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-text-light dark:text-white mb-12">Ekosistem Aplikasi
+                Pendukung</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="w-full h-48 bg-gray-200 dark:bg-gray-800 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="w-20 h-36 bg-white dark:bg-gray-700 rounded-xl border-4 border-gray-300 dark:border-gray-600 shadow-md transform group-hover:scale-110 transition-transform duration-500">
+                            <div class="h-full w-full bg-surface-light dark:bg-surface-dark p-2">
+                                <div class="h-2 w-full bg-gray-200 dark:bg-gray-600 rounded mb-2"></div>
+                                <div class="h-16 w-full bg-primary/20 rounded mb-2"></div>
+                                <div class="h-2 w-1/2 bg-gray-200 dark:bg-gray-600 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-white">Mikro Pesan</h3>
+                    <p class="text-sm text-subtext-light dark:text-subtext-dark mt-2">Pelanggan pesan menu via QR Code
+                        langsung dari meja.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="w-full h-48 bg-gray-200 dark:bg-gray-800 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="w-32 h-24 bg-white dark:bg-gray-700 rounded-lg border-4 border-gray-300 dark:border-gray-600 shadow-md transform group-hover:scale-110 transition-transform duration-500 flex flex-col p-2">
+                            <div class="flex gap-1 mb-1">
+                                <div class="w-1/3 h-8 bg-orange-100 rounded border border-orange-200"></div>
+                                <div class="w-1/3 h-8 bg-green-100 rounded border border-green-200"></div>
+                                <div class="w-1/3 h-8 bg-blue-100 rounded border border-blue-200"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-white">Kitchen Display</h3>
+                    <p class="text-sm text-subtext-light dark:text-subtext-dark mt-2">Tampilan pesanan di dapur
+                        paperless dan efisien.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="w-full h-48 bg-gray-200 dark:bg-gray-800 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="w-32 h-24 bg-white dark:bg-gray-700 rounded-lg border-4 border-gray-300 dark:border-gray-600 shadow-md transform group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                            <span class="material-icons-round text-primary text-3xl">fact_check</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-white">Checker App</h3>
+                    <p class="text-sm text-subtext-light dark:text-subtext-dark mt-2">Cek pesanan siap saji sebelum
+                        diantar ke meja.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="w-full h-48 bg-gray-200 dark:bg-gray-800 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="w-20 h-36 bg-white dark:bg-gray-700 rounded-xl border-4 border-gray-300 dark:border-gray-600 shadow-md transform group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                            <span class="material-icons-round text-blue-500 text-3xl">person_pin</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-text-light dark:text-white">Table Service</h3>
+                    <p class="text-sm text-subtext-light dark:text-subtext-dark mt-2">Aplikasi waiter untuk mencatat
+                        pesanan tamu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800" id="faq">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-text-light dark:text-white mb-2">Frequently Asked Question
+            </h2>
+            <p class="text-center text-subtext-light dark:text-subtext-dark mb-12">Pertanyaan yang sering ditanyakan
+                pelanggan kami.</p>
+            <div class="space-y-4 w-full max-w-2xl mx-auto" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-background-light dark:bg-[#1a2639]">
+                    <button type="button"
+                        class="faq-button w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-[#1f2d42] flex justify-between items-center transition-colors focus:outline-none">
+                        <span class="font-semibold text-text-light dark:text-white">Apa itu Mikro Billing MPOS?</span>
+                        <span
+                            class="material-icons-round text-subtext-light dark:text-gray-400 transition-transform duration-300 transform">expand_more</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-4 pt-2 text-subtext-light dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800">
+                        Mikro Billing MPOS adalah sistem Point of Sale (POS) dan manajemen terintegrasi yang dirancang
+                        khusus untuk bisnis billiard, cafe, dan restoran. Sistem ini memungkinkan Anda mengelola
+                        transaksi kasir, inventaris produk makanan/minuman, serta mengontrol aset meja billiard
+                        (termasuk kelistrikan lampu meja) secara otomatis dari satu platform terpusat.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-background-light dark:bg-[#1a2639]">
+                    <button type="button"
+                        class="faq-button w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-[#1f2d42] flex justify-between items-center transition-colors focus:outline-none">
+                        <span class="font-semibold text-text-light dark:text-white">Bisakah lampu meja mati
+                            otomatis?</span>
+                        <span
+                            class="material-icons-round text-subtext-light dark:text-gray-400 transition-transform duration-300 transform">expand_more</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-4 pt-2 text-subtext-light dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800">
+                        Ya, sangat bisa! Setup perangkat keras khusus dari kami (Smart Billing Controller) yang
+                        dihubungkan ke kelistrikan meja memungkinkan aplikasi kasir untuk secara otomatis menghidupkan
+                        lampu saat sesi bermain dimulai dan mematikannya tepat saat waktu/paket billing pelanggan habis.
+                        Ini menghilangkan potensi kecurangan atau kelalaian karyawan.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-background-light dark:bg-[#1a2639]">
+                    <button type="button"
+                        class="faq-button w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-[#1f2d42] flex justify-between items-center transition-colors focus:outline-none">
+                        <span class="font-semibold text-text-light dark:text-white">Apakah support printer
+                            thermal?</span>
+                        <span
+                            class="material-icons-round text-subtext-light dark:text-gray-400 transition-transform duration-300 transform">expand_more</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-4 pt-2 text-subtext-light dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800">
+                        Tentu. Mikro Billing MPOS dirancang kompatibel dengan hampir semua merk dan tipe printer thermal
+                        kasir (baik USB, Bluetooth, maupun LAN/WiFi). Sistem ini juga mendukung fitur autoprint untuk
+                        nota pelanggan maupun tiket dapur (Kitchen Ticket) secara terpisah.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div
+                    class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-background-light dark:bg-[#1a2639]">
+                    <button type="button"
+                        class="faq-button w-full px-6 py-4 text-left hover:bg-gray-50 dark:hover:bg-[#1f2d42] flex justify-between items-center transition-colors focus:outline-none">
+                        <span class="font-semibold text-text-light dark:text-white">Bagaimana dengan layanan purna
+                            jual?</span>
+                        <span
+                            class="material-icons-round text-subtext-light dark:text-gray-400 transition-transform duration-300 transform">expand_more</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-4 pt-2 text-subtext-light dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800">
+                        Kami menyediakan layanan purna jual (after-sales service) yang komprehensif, mencakup remote
+                        support, panduan teknis, dan perbaikan/penggantian perangkat keras (hardware) jika terjadi
+                        kendala kerja yang tercakup dalam masa garansi perlindungan. Tim bantuan kami siap membantu
+                        kelancaran operasional bisnis Anda.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactivity Script for FAQ -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const faqButtons = document.querySelectorAll('.faq-button');
+
+                    faqButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const content = button.nextElementSibling;
+                            const icon = button.querySelector('.material-icons-round');
+
+                            // Check if current is open
+                            const isOpen = !content.classList.contains('hidden');
+
+                            // Close all others first (Accordion behavior)
+                            document.querySelectorAll('.faq-content').forEach(c => {
+                                c.classList.add('hidden');
+                            });
+                            document.querySelectorAll('.faq-button .material-icons-round').forEach(i => {
+                                i.classList.remove('rotate-180');
+                            });
+
+                            // Toggle current
+                            if (!isOpen) {
+                                content.classList.remove('hidden');
+                                icon.classList.add('rotate-180');
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </section>
+    <footer class="bg-surface-dark text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-icons-round text-primary text-3xl">sports_esports</span>
+                        <span class="font-bold text-xl tracking-tight">Mikro<span
+                                class="text-primary">Billing</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Platform manajemen billiard terdepan di Indonesia. Membantu ratusan pemilik usaha mengelola
+                        bisnis dengan lebih cerdas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a class="text-gray-400 hover:text-white transition-colors" href="#"><i
+                                class="material-icons-round">facebook</i></a>
+                        <a class="text-gray-400 hover:text-white transition-colors" href="#"><i
+                                class="material-icons-round">smart_display</i></a>
+                        <a class="text-gray-400 hover:text-white transition-colors" href="#"><i
+                                class="material-icons-round">photo_camera</i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Navigasi</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#home">Beranda</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#features">Fitur</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#modules">Modul</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="tentang_kami.html">Tentang Kami</a>
+                        </li>
+                        <li><a class="hover:text-primary transition-colors" href="#clients">Klien</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#gallery">Galeri</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#pricing">Harga</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Legal &amp; Bantuan</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a class="hover:text-primary transition-colors" href="#">Syarat &amp; Ketentuan</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Kebijakan Privasi</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Status Server</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Keamanan</h4>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-gray-800 p-2 rounded border border-gray-700">
+                            <span class="material-icons-round text-blue-400 text-2xl">verified_user</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Data Terenkripsi</p>
+                            <p class="font-bold text-sm">AES-256 Bit</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500">
+                        Kami menjaga kerahasiaan data transaksi bisnis Anda dengan standar keamanan internasional.
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">© 2026 PT Appsku Aplikasi Indonesia. All rights reserved.</p>
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    System Operational
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a class="fixed bottom-8 right-8 z-50 flex items-center gap-2 px-5 py-3 bg-primary hover:bg-primary-hover text-white rounded-full shadow-2xl shadow-primary/40 transform hover:scale-105 transition-all duration-300 group"
+        target="_blank" rel="noopener noreferrer"
+        href="https://api.whatsapp.com/send?phone=625369237896&text=Halo%20Admin%20Mikro%20Billing%2C%20saya%20tertarik%20dengan%20sistem%20manajemen%20billiard%20ini.">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span class="font-medium hidden md:inline text-base">Hubungi via WhatsApp</span>
+    </a>
+
+</body>
+
+</html>

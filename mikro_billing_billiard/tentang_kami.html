@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Tentang Kami - Mikro Billing Billiard</title>
+  <meta
+    content="Pelajari lebih lanjut tentang Mikro Billing, misi kami untuk mendigitalisasi bisnis billiard dengan IoT, dan tim di balik inovasi kami."
+    name="description" />
+  <!-- BEGIN: External Assets -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#50C878", // Emerald Green
+            "primary-hover": "#3ea361",
+            "background-light": "#f8fafc",
+            "background-dark": "#0f172a", // Midnight Black
+            "surface-light": "#ffffff",
+            "surface-dark": "#1e293b", // Deep Charcoal
+            "text-light": "#1e293b",
+            "text-dark": "#e2e8f0",
+            "subtext-light": "#64748b",
+            "subtext-dark": "#94a3b8",
+          },
+          fontFamily: {
+            display: ["'Plus Jakarta Sans'", "sans-serif"],
+            body: ["'Plus Jakarta Sans'", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "3xl": "2rem",
+          },
+          backgroundImage: {
+            'hero-pattern': "linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1)), url('https://images.unsplash.com/photo-1596464522964-b912c984ee8f?q=80&w=2070&auto=format&fit=crop')",
+            'hero-pattern-light': "linear-gradient(to bottom, rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 1)), url('https://images.unsplash.com/photo-1596464522964-b912c984ee8f?q=80&w=2070&auto=format&fit=crop')"
+          }
+        },
+      },
+    };
+  </script>
+  <!-- END: External Assets -->
+  <!-- BEGIN: Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#50C878", // Emerald Green
+            "primary-hover": "#3ea361",
+            "background-light": "#f8fafc",
+            "background-dark": "#0f172a", // Midnight Black
+            "surface-light": "#ffffff",
+            "surface-dark": "#1e293b", // Deep Charcoal
+            "text-light": "#1e293b",
+            "text-dark": "#e2e8f0",
+            "subtext-light": "#64748b",
+            "subtext-dark": "#94a3b8",
+          },
+          fontFamily: {
+            display: ["'Plus Jakarta Sans'", "sans-serif"],
+            body: ["'Plus Jakarta Sans'", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <!-- END: Tailwind Configuration -->
+  <!-- BEGIN: Custom Styles -->
+  <style data-purpose="animations">
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+  </style>
+  <style data-purpose="utility">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+  <!-- END: Custom Styles -->
+</head>
+
+<body
+  class="bg-background-dark text-text-dark antialiased transition-colors duration-300 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+  <!-- BEGIN: MainHeader -->
+  <nav
+    class="fixed w-full z-50 top-0 left-0 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center gap-2">
+          <span class="material-icons-round text-primary text-3xl">sports_esports</span>
+          <span class="font-bold text-xl tracking-tight text-text-light dark:text-white">Mikro<span
+              class="text-primary">Billing</span></span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+            href="code.html">Beranda</a>
+          <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+            href="code.html#features">Fitur</a>
+          <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+            href="code.html#modules">Modul</a>
+          <a class="text-primary dark:text-primary transition-colors font-bold" href="#">Tentang Kami</a>
+          <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+            href="code.html#clients">Klien</a>
+          <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+            href="code.html#gallery">Galeri</a>
+          <a class="text-subtext-light dark:text-subtext-dark hover:text-primary dark:hover:text-primary transition-colors font-medium"
+            href="code.html#pricing">Harga</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-subtext-light dark:text-subtext-dark"
+            onclick="document.documentElement.classList.toggle('dark')">
+            <span class="material-icons-round">dark_mode</span>
+          </button>
+          <a class="hidden md:inline-flex items-center justify-center px-6 py-2 border border-transparent text-sm font-semibold rounded-full text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all duration-300"
+            href="daftar_sekarang.html">
+            Daftar Sekarang
+          </a>
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-button"
+            class="md:hidden p-2 rounded-md text-subtext-light dark:text-subtext-dark hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition-colors"
+            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <span class="material-icons-round">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 absolute w-full left-0 top-20 shadow-xl transition-all duration-300 pb-4">
+      <div class="px-4 pt-2 pb-4 space-y-1 flex flex-col">
+        <a href="code.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">Beranda</a>
+        <a href="code.html#features"
+          class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">Fitur</a>
+        <a href="code.html#modules"
+          class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">Modul</a>
+        <a href="#"
+          class="block px-3 py-2 rounded-md text-base font-bold text-primary dark:text-primary transition-colors"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tentang Kami</a>
+        <a href="code.html#clients"
+          class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">Klien</a>
+        <a href="code.html#gallery"
+          class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">Galeri</a>
+        <a href="code.html#pricing"
+          class="block px-3 py-2 rounded-md text-base font-medium text-text-light dark:text-white hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')">Harga</a>
+        <div class="pt-4 pb-2 mt-2">
+          <a href="daftar_sekarang.html"
+            class="flex w-full items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-xl text-white bg-primary hover:bg-primary-hover shadow-lg shadow-primary/30 transition-all duration-300">
+            Daftar Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- END: MainHeader -->
+  <!-- BEGIN: AboutHero -->
+  <section
+    class="relative pt-40 pb-32 bg-hero-pattern-light dark:bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="animate-fade-in">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6 uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Digitalizing Billiard Industry
+        </span>
+        <h1
+          class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-text-light dark:text-white leading-tight">
+          Tentang <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">Mikro
+            Billing</span>
+        </h1>
+        <p class="text-lg md:text-xl text-subtext-light dark:text-subtext-dark max-w-3xl mx-auto leading-relaxed">
+          Kami adalah tim inovator yang berdedikasi untuk menciptakan solusi teknologi terpintar guna meningkatkan
+          efisiensi dan transparansi operasional bisnis billiard Anda.
+        </p>
+      </div>
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent">
+    </div>
+  </section>
+  <!-- END: AboutHero -->
+  <!-- BEGIN: OurStory -->
+  <section class="py-24 bg-background-dark overflow-hidden" id="our-story">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Visual Column -->
+        <div class="relative">
+          <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-surface-dark group">
+            <img alt="Tim bekerja"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZObgA-QigzOpnLO9-Wcyc1hGnjYU-f19eYtFdvSeH7MoHr23s1hw6yg1nNeqTdKAVQuF4aW3eCagU6an6eHITtzM3FMt-yWQjyI4RiTsGtKXDnZ_SvhrwgvFsoXq-EENDLuaJpPvujLMHEdbSF6dOrIbK0hAKEg7rlWNL2Fr-UfXZz49UiHsTLu97mKOjNyURjZSYnKJFAkSr1waoDvjDKU2nqWgRHNagglCowSNf2fjOHxQAJ9g7Niqig6dFvmk-1TjB_UPQbiTD" />
+            <div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+          </div>
+          <!-- Floating Badge -->
+          <div
+            class="absolute -bottom-8 -right-8 bg-surface-dark p-6 rounded-2xl shadow-2xl border border-gray-700 max-w-[200px]">
+            <p class="text-primary font-bold text-4xl mb-1">5+</p>
+            <p class="text-sm text-subtext-dark font-medium">Tahun Inovasi Teknologi IoT</p>
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div class="space-y-6">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white">Cerita di Balik <span class="text-primary">Mikro
+              Billing</span></h2>
+          <p class="text-lg text-subtext-dark leading-relaxed">
+            Berawal dari keresahan para pemilik usaha billiard akan tingginya tingkat "kebocoran" pendapatan akibat
+            manipulasi durasi meja, kami hadir dengan visi untuk menutup celah tersebut secara permanen.
+          </p>
+          <p class="text-lg text-subtext-dark leading-relaxed">
+            Mikro Billing lahir dari penggabungan sistem kasir (POS) yang handal dengan perangkat hardware IoT yang
+            mampu mengontrol aliran listrik meja secara presisi. Dengan teknologi ini, tidak ada lagi lampu yang menyala
+            tanpa tercatat di sistem billing.
+          </p>
+          <div class="pt-4">
+            <div class="flex items-center gap-4 text-white">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <span class="material-icons-round text-primary">hub</span>
+              </div>
+              <p class="font-bold">Solusi Terintegrasi Hardware &amp; Software</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: OurStory -->
+  <!-- BEGIN: VisionMission -->
+  <section class="py-24 bg-surface-dark/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Vision -->
+        <div class="glass-card p-10 rounded-3xl relative overflow-hidden group">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors">
+          </div>
+          <span class="material-icons-round text-primary text-5xl mb-6">visibility</span>
+          <h3 class="text-2xl font-bold text-white mb-4 tracking-tight">Visi Kami</h3>
+          <p class="text-subtext-dark leading-relaxed text-lg">
+            Menjadi platform manajemen billiard terintegrasi nomor satu di Asia Tenggara yang memberdayakan pengusaha
+            melalui otomatisasi dan analisis data yang akurat.
+          </p>
+        </div>
+        <!-- Mission -->
+        <div class="glass-card p-10 rounded-3xl relative overflow-hidden group">
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors">
+          </div>
+          <span class="material-icons-round text-primary text-5xl mb-6">rocket_launch</span>
+          <h3 class="text-2xl font-bold text-white mb-4 tracking-tight">Misi Kami</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="material-icons-round text-primary text-sm mt-1">circle</span>
+              <span class="text-subtext-dark text-lg leading-snug">Menyediakan teknologi IoT yang mudah digunakan dan
+                terjangkau bagi semua skala bisnis.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-icons-round text-primary text-sm mt-1">circle</span>
+              <span class="text-subtext-dark text-lg leading-snug">Menghilangkan praktik kecurangan operasional melalui
+                sistem monitoring real-time.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: VisionMission -->
+  <!-- BEGIN: WhyChooseUs -->
+  <section class="py-24 bg-background-dark" id="why-us">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white">Mengapa Memilih Mikro Billing?</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-[#151e2e] p-8 rounded-2xl border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+          <div
+            class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <span class="material-icons-round text-3xl text-primary group-hover:text-white">verified</span>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Integritas Data</h4>
+          <p class="text-subtext-dark text-sm leading-relaxed">
+            Data transaksi Anda tersimpan aman dan tidak dapat diubah secara manual tanpa otorisasi tingkat tinggi,
+            menjamin akurasi laporan keuangan.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="bg-[#151e2e] p-8 rounded-2xl border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+          <div
+            class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <span class="material-icons-round text-3xl text-primary group-hover:text-white">lightbulb</span>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Inovasi Berkelanjutan</h4>
+          <p class="text-subtext-dark text-sm leading-relaxed">
+            Kami terus memperbarui sistem kami berdasarkan masukan dari ratusan merchant untuk menjawab tantangan bisnis
+            billiard yang terus berkembang.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="bg-[#151e2e] p-8 rounded-2xl border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+          <div
+            class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+            <span class="material-icons-round text-3xl text-primary group-hover:text-white">support_agent</span>
+          </div>
+          <h4 class="text-xl font-bold text-white mb-3">Dukungan Responsif</h4>
+          <p class="text-subtext-dark text-sm leading-relaxed">
+            Tim teknis kami siap membantu instalasi hardware maupun kendala software 24/7 untuk memastikan operasional
+            bisnis Anda tetap lancar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: WhyChooseUs -->
+  <!-- BEGIN: OurTeam -->
+  <section class="py-24 bg-surface-dark/20" id="team">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white">Tim di Balik Layar</h2>
+        <p class="mt-4 text-subtext-dark">Kumpulan profesional yang berdedikasi membangun ekosistem billiard terbaik.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Team Member 1 -->
+        <div class="text-center group">
+          <div
+            class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-6 border-4 border-gray-800 group-hover:border-primary transition-colors duration-300">
+            <img alt="CEO" class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm0e0Pr0AnwcGoVZbZVqkEAN5lVunbs8qRv6wEkZIh8H3g1AcSWfFwTQ1QHnDf40038jptbp9mcGvKjZOVlkrXACJ3MPUQUtkx41-MwuMqRs3DoXVx1MjNQB_7VGdR5QxYwEQx8A8e6mgUt7fv2zImbTDMPGuT7ZSt-Q4ppamjegEQhL1YRdXjCj4cmV8AWd0D10Ck5hB2gtxUxcMNK9DP2T65Vg1JppL6f60Q_-ezQflyFVTZzx-CY1qv4YESy1TqD605hvada90h" />
+          </div>
+          <h4 class="text-xl font-bold text-white">Ahmad Fauzi</h4>
+          <p class="text-primary text-sm font-semibold uppercase tracking-wider">Founder &amp; CEO</p>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="text-center group">
+          <div
+            class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-6 border-4 border-gray-800 group-hover:border-primary transition-colors duration-300">
+            <img alt="CTO" class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVDTYgV0Otoit7LK4rrR4EaznGEuGQJkVgLpDyWXO8GrWZAzJFDugmxO3E5QX0QzuQvJ-YX4SMYvRPQD1YuUmXdE1FC5mpYWcPF69Axl5lcqW2ADvYcdso7yVGfMVGFyThZmm_X2lWx_Gq9pItTvbHYhgQrD9aOjmIEDgk-XX77LmNGTW9WywiHOhF43cIPNGpu1g37-FcCw2_CHjKf22PoxVlJTGJJRkcnhQ50iUgdLDDOjgFuFpQU-llJo0EAYfgqnh4gKgfFSkV" />
+          </div>
+          <h4 class="text-xl font-bold text-white">Budi Santoso</h4>
+          <p class="text-primary text-sm font-semibold uppercase tracking-wider">CTO &amp; Lead Developer</p>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="text-center group">
+          <div
+            class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-6 border-4 border-gray-800 group-hover:border-primary transition-colors duration-300">
+            <img alt="Operations" class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTCqvG_ZQIDdXdVQcIN-gcCc558YNjag4LBsPENLUk_rPH9pVKC5nCOxnqTBAAQjCGuQAz3X5S0DNe8aHJH5wo1IAIIHaG782ezXdm1VKhtwQr697iaxqZigqRNPZ8juiTI_Wfhr4lRNDP4BUlSDZZofLrCXIvI7Oh246CRBNg1jvey-zmlxasDsnqrmiWXSQPHidmH9RBhqUo3cARC_9JjVAppW0epKqwvYFbEsr661T9PBHt4qkuc2O8rqdE7bB8NwEDC6eGTLoa" />
+          </div>
+          <h4 class="text-xl font-bold text-white">Citra Lestari</h4>
+          <p class="text-primary text-sm font-semibold uppercase tracking-wider">Head of Operations</p>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="text-center group">
+          <div
+            class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-6 border-4 border-gray-800 group-hover:border-primary transition-colors duration-300">
+            <img alt="Sales" class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCjiCwwTyWGYVxS4HfaABI9S6gtXRSevuUpRKfBvYDdQ3cmsY0Bimg2D8dWNslXk8EoujepouafWxvhHirTn5r6eKwnujrmN6-Fz0FHS8hhc1vT3IdCsnKZ6ejfvxCMkczYVq2V2fjSA95lcDGjfFv1AijP9aR4kVMuSc3DPncIQi4xHRRnnWjvUKFV2jJI2xGO7_cOyHduI5n6TkzoUoZIhaHV8rA6I0BHjcV4qPl2uIxBQjj5OXV8b6qXWfcEujeeXQJFVa8FO5U" />
+          </div>
+          <h4 class="text-xl font-bold text-white">Dewi Utari</h4>
+          <p class="text-primary text-sm font-semibold uppercase tracking-wider">Customer Success</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: OurTeam -->
+  <!-- BEGIN: CTA -->
+  <section class="py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="bg-gradient-to-r from-primary/20 to-emerald-500/20 rounded-3xl p-8 md:p-12 border border-primary/30 text-center relative overflow-hidden">
+        <div class="absolute -top-12 -left-12 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6 relative z-10">Siap Mengembangkan Bisnis Anda?
+        </h2>
+        <p class="text-lg text-subtext-dark mb-10 relative z-10 max-w-2xl mx-auto">
+          Mari bergabung dengan ratusan pemilik usaha billiard yang telah beralih ke Mikro Billing dan rasakan kemudahan
+          manajemen tanpa kebocoran.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+          <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-text-dark bg-surface-dark border border-gray-700 hover:border-primary transition-all duration-300"
+            href="code.html">
+            Kembali ke Beranda
+          </a>
+          <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-primary hover:bg-primary-hover shadow-xl shadow-primary/30 transition-all duration-300"
+            href="https://wa.me/6285369237896">
+            Konsultasi Gratis via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: CTA -->
+  <!-- BEGIN: MainFooter -->
+  <footer class="bg-surface-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-6">
+            <span class="material-icons-round text-primary text-3xl">sports_esports</span>
+            <span class="font-bold text-xl tracking-tight">Mikro<span class="text-primary">Billing</span></span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Platform manajemen billiard terdepan di Indonesia. Membantu ratusan pemilik usaha mengelola bisnis dengan
+            lebih cerdas.
+          </p>
+          <div class="flex space-x-4">
+            <a class="text-gray-400 hover:text-white transition-colors" href="#"><i
+                class="material-icons-round">facebook</i></a>
+            <a class="text-gray-400 hover:text-white transition-colors" href="#"><i
+                class="material-icons-round">smart_display</i></a>
+            <a class="text-gray-400 hover:text-white transition-colors" href="#"><i
+                class="material-icons-round">photo_camera</i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Navigasi</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a class="hover:text-primary transition-colors" href="code.html">Beranda</a></li>
+            <li><a class="hover:text-primary transition-colors" href="code.html#features">Fitur</a></li>
+            <li><a class="hover:text-primary transition-colors" href="code.html#pricing">Harga</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Legal &amp; Bantuan</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a class="hover:text-primary transition-colors" href="#">Syarat &amp; Ketentuan</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Kebijakan Privasi</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Pusat Bantuan</a></li>
+            <li><a class="hover:text-primary transition-colors" href="#">Status Server</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-6">Keamanan</h4>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="bg-gray-800 p-2 rounded border border-gray-700">
+              <span class="material-icons-round text-blue-400 text-2xl">verified_user</span>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Data Terenkripsi</p>
+              <p class="font-bold text-sm">AES-256 Bit</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500">
+            Kami menjaga kerahasiaan data transaksi bisnis Anda dengan standar keamanan internasional.
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-gray-500">© 2026 PT Appsku Aplikasi Indonesia. All rights reserved.</p>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <span class="w-2 h-2 rounded-full bg-green-500"></span>
+          System Operational
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END: MainFooter -->
+</body>
+
+</html>
